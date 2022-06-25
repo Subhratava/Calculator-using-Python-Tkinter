@@ -55,6 +55,15 @@ def iter(str):
         return f + rm(temp)
     return
 
+def vulneribilty_check(str):  #checks for vulnerabilityn in eval function
+    #dosent allow and other funtions than specified to be passed in to eval
+    allowed = {"tan","cos","sin","log","logn","sqrt","expn"}
+    fx_found = re.findall('[A-Za-z]+',str)
+    #print(fx_found)
+    for fx in fx_found:
+        if fx not in allowed:
+            return "Invalid syntax"
+    return str
 
 def linspace(start, stop, n):
     if n == 1:
