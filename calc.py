@@ -65,6 +65,7 @@ def evaluate(event=None):
         e.delete(0, END)
         e.insert(END,temp)
         # print(temp)
+        # eval can be vulnerable if malicious code is not checked before passing it.
         x = float(eval(vulneribilty_check(iter(temp))))
         #clr()
         ans_op.insert(0, x)
